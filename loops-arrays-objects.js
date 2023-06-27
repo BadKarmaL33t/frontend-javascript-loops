@@ -13,13 +13,11 @@ const scores = [
 // 83
 // 77
 // 92
-// 66ç
+// 66
 // ==========================================
-
-
-
-
-
+for (let i = 0; i < scores.length; i++) {
+    console.log(scores[i].score);
+}
 // ==========================================
 // Opdracht 1b
 // Breid je script uit door voor iedere student de score om te rekenen naar een letter en dit in de terminal te printen
@@ -31,11 +29,24 @@ const scores = [
 // A
 // D
 // ==========================================
-
-
-
-
-
+for (let i = 0; i < scores.length; i++) {
+    if (scores[i].score >= 90) {
+        scores[i].grade = "A"
+    }
+    else if (scores[i].score >= 80) {
+        scores[i].grade = "B"
+    }
+    else if (scores[i].score >= 70) {
+        scores[i].grade = "C"
+    }
+    else if (scores[i].score >= 60) {
+        scores[i].grade = "D"
+    }
+    else {
+        scores[i].grade = "F"
+    }
+    console.log(scores[i].grade);
+}
 // ==========================================
 // Opdracht 1c
 // Breid je script uit door de bijbehorende letter op te slaan in de 'grade'-property van ieder student-object in de array.
@@ -50,7 +61,7 @@ const scores = [
 // ==========================================
 
 
-
+// ^^^ zie bovenstaand ^^^
 
 
 // ==========================================
@@ -74,18 +85,18 @@ const NOVIEmployees = [
 //   { firstName: 'Mark', lastName: 'Rensen', email: 'Mark.Rensen@novi.nl' },
 //  ];
 // ==========================================
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    NOVIEmployees[i].email = (NOVIEmployees[i].firstName + NOVIEmployees[i].lastName + "@novi.nl").toLowerCase();
+    console.log(NOVIEmployees[i].email);
+}
 
-
-
-
-
+// ^^^ Ik had bij voorbaat al gespeeld met toLowercase, omdat er "voornaam.achternaam@novi.nl" stond vermeld. ^^^
 
 // Opdracht 2-BONUS
 // Lukt het je om ervoor te zorgen dat alle e-mailadressen in lowercase letters komen te staan? Dit heb je nog niet geleerd, maar google is your best friend...
 // ==========================================
 
-
-
+// ^^^ Zie bovenstaande opdracht ^^^
 
 // ==========================================
 // Opdracht 3
@@ -129,7 +140,35 @@ const students = [
 //     { name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: 'Vogelenbuurt' },
 //     { name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' }
 // ]
+
+//  Hierboven iets teveel copy paste zo te zien :)
 // ==========================================
-
-
+for (let i = 0; i < students.length; i++) {
+    switch (students[i].zipCode) {
+        case '3513':
+            students[i].neighborhood = 'Pijlsweerd';
+            break;
+        case '3514':
+            students[i].neighborhood = 'Vogelenbuurt';
+            break;
+        case '3512':
+            students[i].neighborhood = 'Binnenstad';
+            break;
+        case '3531':
+            students[i].neighborhood = 'Lombok';
+            break;
+        case '3572':
+            students[i].neighborhood = 'Wittevrouwen';
+            break;
+        case '3581':
+            students[i].neighborhood = 'Oudwijk';
+            break;
+        case '3583':
+            students[i].neighborhood = 'Schildersbuurt';
+            break;
+        default:
+            students[i].neighborhood = "onbekende postcode"
+    }
+}
+console.log(students)
 
